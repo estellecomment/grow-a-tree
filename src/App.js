@@ -32,8 +32,9 @@ class Node extends Component {
                top: this.props.topPx + "px",
                left: this.props.leftPx + "px"
              }}
-             onClick={(e) => { // event is picked up by all parents of the clicked circle. Stop propagation?
+             onClick={(e) => {
                e.preventDefault();
+               e.stopPropagation();
                console.log('onclick for node ', this.id, 'target:', e.target, 'currentTarget', e.currentTarget);
                this.addChild();
              }}
